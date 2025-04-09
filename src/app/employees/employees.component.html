@@ -1,0 +1,25 @@
+<div class="employees-container">
+
+  <div class="employees-grid">
+    @if (employeesResource.value()) {
+      @for (employee of employeesResource.value(); track employee.id) {
+        <div class="employee-card">
+          <div class="employee-avatar">
+            <img [ngSrc]="employee.avatar" alt="{{ employee.name }}" width="80" height="80">
+          </div>
+          <div class="employee-info">
+            <h2>{{ employee.name }}</h2>
+            <div class="employee-meta">
+              <time>{{ employee.createdAt | date:'mediumDate' }}</time>
+              <span class="employee-id">#{{ employee.id }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    } @else {
+      <div class="loading-state">
+        <p>Loading employees...</p>
+      </div>
+    }
+  </div>
+</div>

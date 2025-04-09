@@ -1,0 +1,14 @@
+<div class="news-grid">
+  @if (newsResource.value()) {
+    @for (news of newsResource.value(); track news.id) {
+      <article class="news-card">
+        <div class="news-meta">
+          <time>{{ news.createdAt | date:'medium' }}</time>
+          <span class="news-id">#{{ news.id }}</span>
+        </div>
+        <h2>{{ news.title }}</h2>
+        <p>{{ news.content }}</p>
+      </article>
+    }
+  }
+</div>
