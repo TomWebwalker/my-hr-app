@@ -10,5 +10,5 @@ interface Employee {
 
 @Injectable({providedIn: 'root'})
 export class EmployeesService {
-  readonly employeesResource = httpResource<Employee[]>('https://67f28b29ec56ec1a36d36920.mockapi.io/employees');
+  readonly employeesResource = httpResource<Employee[]>(() => 'https://67f28b29ec56ec1a36d36920.mockapi.io/employees');
 }
