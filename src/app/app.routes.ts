@@ -12,5 +12,9 @@ export const routes: Routes = [
   {
     path: 'employees',
     loadComponent: () => import('./employees/employees.component')
+  },
+  {
+    path: 'faq',
+    loadComponent: () => import('./faq/faq.component')
   }
 ];
